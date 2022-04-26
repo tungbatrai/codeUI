@@ -47,9 +47,19 @@ export default function TopViews() {
       <div className="top-views-conent">
         {DataTopView.map((item, index) => {
           return (
-            <>
+            <div className="top-views-content-item">
               <img src={item.url} className="image" />
-            </>
+
+              <h5 className="name">
+                  {item.name} : {item.title}
+              </h5>
+              <div className="ep">
+                {item.episodes}/{item.current_episodes}
+              </div>
+              <div className="view">
+                  {item.view}
+              </div>
+            </div>
           );
         })}
       </div>

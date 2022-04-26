@@ -69,8 +69,7 @@ html {
         img {
           width: 190px;
           height: 269px;
-          border-radius:5px ;
-          
+          border-radius: 5px;
         }
         .ep {
           width: 66px;
@@ -130,19 +129,51 @@ html {
     .top-views-time {
       position: absolute;
       right: 0%;
-      
+
       .top-views-time-content {
-        color : #b7b7b7;
+        color: #b7b7b7;
         font-size: 0.8em;
       }
     }
   }
   .top-views-conent {
     padding-top: 24px;
-    .image {
-      margin-bottom: 20px;
-      width: 100%;
-      border-radius: 5px;
+
+    .top-views-content-item {
+      position: relative;
+      .image {
+        margin-bottom: 20px;
+        width: 100%;
+        border-radius: 5px;
+      }
+      .name {
+        position: absolute;
+        z-index: 1;
+        bottom: 35px;
+        padding-left: 24px;
+      }
+      .ep {
+        background-color: #e53637;
+        position: absolute;
+        z-index: 1;
+        top: 10px;
+        padding:2px 0px 0px  14px;
+        left: 10px;
+        border-radius: 4px;
+        height: 24px;
+        width: 66px;
+        font-size:13px
+      }
+      .view {
+        background-color: #3d3d3d;
+        position: absolute;
+        z-index: 1;
+        top: 10px;
+        right: 10px;
+        padding: 2px 0px 0px 14px;
+        width: 70px;
+        border-radius:4px ;
+      }
     }
   }
 }
