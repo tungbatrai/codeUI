@@ -1,0 +1,148 @@
+export const DataTopView = [
+    {
+        name :"Boruto",
+        title:"Naruto next generations",
+        view: 9141,
+        views_day: 10,
+        views_week: 50,
+        views_month: 200,
+        view_years : 1000,
+        current_episodes: 17,
+        episodes: 18,
+        url :"https://technext.github.io/anime/img/sidebar/tv-1.jpg"
+    },
+    {
+        name :"The Seven Deadly Sins",
+        title:"Wrath of the Gods",
+        view: 9141,
+        views_day: 10,
+        views_week: 50,
+        views_month: 200,
+        view_years : 1000,
+        current_episodes: 17,
+        episodes: 18,
+        url :"https://technext.github.io/anime/img/sidebar/tv-2.jpg"
+    },
+    {
+        name :"Sword art online",
+        title:"alicization war of underworld",
+        view: 9141,
+        views_day: 10,
+        views_week: 50,
+        views_month: 200,
+        view_years : 1000,
+        current_episodes: 17,
+        episodes: 18,
+        url :"https://technext.github.io/anime/img/sidebar/tv-3.jpg"
+    },
+    {
+        name :"Fate/stay night",
+        title:"Heaven's Feel I. presage flower",
+        view: 9141,
+        views_day: 10,
+        views_week: 50,
+        views_month: 200,
+        view_years : 1000,
+        current_episodes: 17,
+        episodes: 18,
+        url :"https://technext.github.io/anime/img/sidebar/tv-4.jpg"
+    },
+    {
+        name :"Fate stay night ",
+        title:"Unlimited blade works",
+        view: 9141,
+        views_day: 10,
+        views_week: 50,
+        views_month: 200,
+        view_years : 1000,
+        current_episodes: 17,
+        episodes: 18,
+        url :"https://technext.github.io/anime/img/sidebar/tv-5.jpg"
+    },
+    // {
+    //     name :"Boruto",
+    //     title:"Naruto next generations",
+    //     view: 9141,
+    //     views_day: 10,
+    //     views_week: 50,
+    //     views_month: 200,
+    //     view_years : 1000,
+    //     current_episodes: 17,
+    //     episodes: 18,
+    //     url :"https://technext.github.io/anime/img/sidebar/tv-6.jpg"
+    // },
+    // {
+    //     name :"Boruto",
+    //     title:"Naruto next generations",
+    //     view: 9141,
+    //     views_day: 10,
+    //     views_week: 50,
+    //     views_month: 200,
+    //     view_years : 1000,
+    //     current_episodes: 17,
+    //     episodes: 18,
+    //     url :"https://technext.github.io/anime/img/sidebar/tv-7.jpg"
+    // },
+    // {
+    //     name :"Boruto",
+    //     title:"Naruto next generations",
+    //     view: 9141,
+    //     views_day: 10,
+    //     views_week: 50,
+    //     views_month: 200,
+    //     view_years : 1000,
+    //     current_episodes: 17,
+    //     episodes: 18,
+    //     url :"https://technext.github.io/anime/img/sidebar/tv-8.jpg"
+    // },
+    // {
+    //     name :"Boruto",
+    //     title:"Naruto next generations",
+    //     view: 9141,
+    //     views_day: 10,
+    //     views_week: 50,
+    //     views_month: 200,
+    //     view_years : 1000,
+    //     current_episodes: 17,
+    //     episodes: 18,
+    //     url :"https://technext.github.io/anime/img/sidebar/tv-9.jpg"
+    // },
+    // {
+    //     name :"Boruto",
+    //     title:"Naruto next generations",
+    //     view: 9141,
+    //     views_day: 10,
+    //     views_week: 50,
+    //     views_month: 200,
+    //     view_years : 1000,
+    //     current_episodes: 17,
+    //     episodes: 18,
+    //     url :"https://technext.github.io/anime/img/sidebar/tv-10.jpg"
+    // },
+    // {
+    //     name :"Boruto",
+    //     title:"Naruto next generations",
+    //     view: 9141,
+    //     views_day: 10,
+    //     views_week: 50,
+    //     views_month: 200,
+    //     view_years : 1000,
+    //     current_episodes: 17,
+    //     episodes: 18,
+    //     url :"https://technext.github.io/anime/img/sidebar/tv-11.jpg"
+    // },
+    // {
+    //     name :"Boruto",
+    //     title:"Naruto next generations",
+    //     view: 9141,
+    //     views_day: 10,
+    //     views_week: 50,
+    //     views_month: 200,
+    //     view_years : 1000,
+    //     current_episodes: 17,
+    //     episodes: 18,
+    //     url :"https://technext.github.io/anime/img/sidebar/tv-12.jpg"
+    // },
+    
+]
+

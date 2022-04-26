@@ -11,10 +11,10 @@ export default function Body() {
       <Slide />
       <div className="product">
         <div className="row">
-          <div className="col-md-8">
+          <div className="col-lg-8">
             <ProductContent />
           </div>
-          <div className="col-md-4">
+          <div className="col-lg-4">
             <TopViews />
           </div>
         </div>

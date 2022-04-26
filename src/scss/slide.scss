@@ -9,7 +9,7 @@
   0% {
     top: -180px;
   }
-  60% {
+  75% {
     top: -300px;
     opacity: 0;
   }
@@ -18,11 +18,39 @@
   }
 }
 @keyframes slideContent {
-  from {
-    top: -390px;
-  }
-  to {
+  // from {
+  //   top: -390px;
+  // }
+  // to {
+  //   top: -70px;
+  // }
+  0% {
     top: -70px;
+  }
+  75% {
+    top: -290px;
+    opacity: 0;
+  }
+  100% {
+    top: -70px;
+  }
+}
+@keyframes slideButton {
+  // from {
+  //   top: -390px;
+  // }
+  // to {
+  //   top: -70px;
+  // }
+  0% {
+    bottom: 9px;
+  }
+  75% {
+    bottom: 129px;
+    opacity: 0;
+  }
+  100% {
+    bottom: 9px;
   }
 }
 .slide {
@@ -64,7 +92,31 @@
   animation: slideTitle;
   animation-duration: 1.5s;
 }
-
+.slide-button {
+  left: -77px;
+  position: absolute;
+  background-color: #e53637;
+  padding: 14px 20px; 
+  bottom: 9px;
+  border-radius: 4px 0px 0px 4px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-right: 1px;
+  height: 50px;
+  animation: slideButton;
+  animation-duration: 1.5s;
+}
+.slide-icon-button {
+  background-color: #e53637;
+  position: absolute;
+  width: 20px;
+  left: 89px;
+  bottom: 9px;
+  height: 50px;
+  border-radius: 0px 4px 4px 0px;
+  animation: slideButton;
+  animation-duration: 1.5s;
+}
 .button-next {
   @extend .ct-button;
   right: -33px;
@@ -102,7 +154,7 @@
   position: absolute;
   top: -70px;
   animation: slideContent;
-  animation-duration: 1s;
+  animation-duration: 1.5s;
 }
 .dot-page {
   height: 8px !important;

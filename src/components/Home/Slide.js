@@ -42,7 +42,7 @@ export default function Slide() {
                 type="button"
                 data-bs-target="#carouselExampleCaptions"
                 data-bs-slide-to={index}
-                className={ index === 0 ? "active dot-page" : "dot-page"}
+                className={index === 0 ? "active dot-page" : "dot-page"}
                 aria-current="true"
                 // aria-label="Slide 1"
                 key={index}
@@ -65,6 +65,8 @@ export default function Slide() {
                     {item.title} : <br /> {item.titleContent}
                   </h5>
                   <p className="slide-content">{item.content}</p>
+                  <div className="slide-button">WATCH NOW</div>
+                  <HiChevronRight className="slide-icon-button"/>
                 </div>
               </div>
             );
