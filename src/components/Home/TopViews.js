@@ -1,9 +1,54 @@
 /** @format */
 import React, { useState, useEffect } from "react";
 import { DataTopView } from "./DataTopView";
+import { ImEye } from "react-icons/im";
 export default function TopViews() {
   const [time, setTime] = useState(0);
-  console.log(DataTopView);
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    console.log(DataTopView.sort(compareValues("views_day")));
+    setData(DataTopView.sort(compareValues("views_day")));
+  }, []);
+  function compareValues(key, order = "asc") {
+    return function (a, b) {
+      if (!a.hasOwnProperty(key) || !b.hasOwnProperty(key)) {
+        // nếu không tồn tại
+        return 0;
+      }
+
+      const varA = typeof a[key] === "string" ? a[key].toUpperCase() : a[key];
+      const varB = typeof b[key] === "string" ? b[key].toUpperCase() : b[key];
+
+      let comparison = 0;
+      if (varA < varB) {
+        comparison = 1;
+      } else if (varA > varB) {
+        comparison = -1;
+      }
+      return order == "asc" ? comparison * -1 : comparison;
+    };
+  }
+  // console.log(DataTopView);
+  function handleSelectTime(e) {
+    if (e != time) {
+      setTime(e);
+      switch (e) {
+        case 1:
+          setData(DataTopView.sort(compareValues("views_week")));
+          break;
+        case 2:
+          setData(DataTopView.sort(compareValues("views_month")));
+          break;
+        case 3:
+          setData(DataTopView.sort(compareValues("view_years")));
+          break;
+
+        default:
+          setData(DataTopView.sort(compareValues("views_day")));
+          break;
+      }
+    }
+  }
   return (
     <div className="top-views">
       <div className="top-views-header">
@@ -14,7 +59,7 @@ export default function TopViews() {
             className={`${
               time == 0 ? "mx-2 cursor" : "top-views-time-content mx-2 cursor"
             }`}
-            onClick={() => setTime(0)}
+            onClick={() => handleSelectTime(0)}
           >
             Day
           </span>
@@ -22,7 +67,7 @@ export default function TopViews() {
             className={`${
               time == 1 ? "mx-2 cursor" : "top-views-time-content mx-2 cursor"
             }`}
-            onClick={() => setTime(1)}
+            onClick={() => handleSelectTime(1)}
           >
             Week
           </span>
@@ -30,7 +75,7 @@ export default function TopViews() {
             className={`${
               time == 2 ? "mx-2 cursor" : "top-views-time-content mx-2 cursor"
             }`}
-            onClick={() => setTime(2)}
+            onClick={() => handleSelectTime(2)}
           >
             Month
           </span>
@@ -38,26 +83,27 @@ export default function TopViews() {
             className={`${
               time == 3 ? "mx-2 cursor" : "top-views-time-content mx-2 cursor"
             }`}
-            onClick={() => setTime(3)}
+            onClick={() => handleSelectTime(3)}
           >
             Years
           </span>
         </span>
       </div>
       <div className="top-views-conent">
-        {DataTopView.map((item, index) => {
+        {data?.map((item, index) => {
           return (
             <div className="top-views-content-item">
               <img src={item.url} className="image" />
 
               <h5 className="name">
-                  {item.name} : {item.title}
+                {item.name} : {item.title}
               </h5>
               <div className="ep">
                 {item.episodes}/{item.current_episodes}
               </div>
               <div className="view">
-                  {item.view}
+                <ImEye style={{ marginTop: "-4px" }} className="icon" />{" "}
+                <div> {item.view}</div>
               </div>
             </div>
           );

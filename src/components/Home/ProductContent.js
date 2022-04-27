@@ -3,6 +3,8 @@
 import React, { useState, useEffect } from "react";
 import { DataHome } from "./DataHome";
 import { HiArrowRight } from "react-icons/hi";
+import { ImEye } from "react-icons/im";
+import { FaRegComments } from "react-icons/fa";
 export default function ProductContent() {
   const [data, setData] = useState([]);
   useEffect(() => {
@@ -36,7 +38,16 @@ export default function ProductContent() {
                             {content.current_episodes}/ {content.episodes}
                           </div>
                         </div>
-                        <img src={`${content.url}`} className="" />
+                        <div className="image-custom">
+                          <img src={`${content.url}`} className="" />
+
+                          <div className="comment">
+                            <FaRegComments style={{ marginTop: "-4px" }}  /><div className="comment-content">{content.comment}</div>
+                          </div>
+                          <div className="view">
+                            <ImEye style={{ marginTop: "-4px" }} /><div className="view-content">{content.view}</div>
+                          </div>
+                        </div>
                       </div>
                       <div className="image-content pt-2 pb-3">
                         <div className="image-type">

@@ -7,7 +7,7 @@ export const DataHome = [
         name: "The Seven Deadly Sins: Wrath of the Gods",
         type: [{ name: "Active" }, { name: "Movie" }],
         view: 9141,
-        comment: 11,
+        comment: 1100,
         current_episodes: 17,
         episodes: 18,
         url: "https://technext.github.io/anime/img/trending/trend-1.jpg",
