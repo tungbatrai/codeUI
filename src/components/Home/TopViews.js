@@ -5,6 +5,7 @@ import { ImEye } from "react-icons/im";
 export default function TopViews() {
   const [time, setTime] = useState(0);
   const [data, setData] = useState([]);
+  const [show,setShow] = useState(false)
   useEffect(() => {
     console.log(DataTopView.sort(compareValues("views_day")));
     setData(DataTopView.sort(compareValues("views_day")));
@@ -12,13 +13,10 @@ export default function TopViews() {
   function compareValues(key, order = "asc") {
     return function (a, b) {
       if (!a.hasOwnProperty(key) || !b.hasOwnProperty(key)) {
-        // nếu không tồn tại
         return 0;
       }
-
       const varA = typeof a[key] === "string" ? a[key].toUpperCase() : a[key];
       const varB = typeof b[key] === "string" ? b[key].toUpperCase() : b[key];
-
       let comparison = 0;
       if (varA < varB) {
         comparison = 1;
@@ -35,16 +33,20 @@ export default function TopViews() {
       switch (e) {
         case 1:
           setData(DataTopView.sort(compareValues("views_week")));
+          setShow(!show)
           break;
         case 2:
           setData(DataTopView.sort(compareValues("views_month")));
+          setShow(!show)
           break;
         case 3:
           setData(DataTopView.sort(compareValues("view_years")));
+          setShow(!show)
           break;
 
         default:
           setData(DataTopView.sort(compareValues("views_day")));
+          setShow(!show)
           break;
       }
     }
@@ -92,7 +94,7 @@ export default function TopViews() {
       <div className="top-views-conent">
         {data?.map((item, index) => {
           return (
-            <div className="top-views-content-item">
+            <div className={`top-views-content-item ${show ? 'animation':'animation-active'}`}>
               <img src={item.url} className="image" />
 
               <h5 className="name">

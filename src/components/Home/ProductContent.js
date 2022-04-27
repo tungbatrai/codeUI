@@ -5,6 +5,7 @@ import { DataHome } from "./DataHome";
 import { HiArrowRight } from "react-icons/hi";
 import { ImEye } from "react-icons/im";
 import { FaRegComments } from "react-icons/fa";
+import { AiOutlinePlayCircle } from "react-icons/ai";
 export default function ProductContent() {
   const [data, setData] = useState([]);
   useEffect(() => {
@@ -23,8 +24,8 @@ export default function ProductContent() {
                     {item.name}
                   </div>
                 </div>
-                <div className="col-md-4 text-end">
-                  <span className="view-all">VIEW ALL</span>{" "}
+                <div className="col-md-4 text-end view-all">
+                  <span className="view-all-content">VIEW ALL</span>{" "}
                   <HiArrowRight className="icon-view-all mt-e5p" />
                 </div>
               </div>
@@ -42,11 +43,18 @@ export default function ProductContent() {
                           <img src={`${content.url}`} className="" />
 
                           <div className="comment">
-                            <FaRegComments style={{ marginTop: "-4px" }}  /><div className="comment-content">{content.comment}</div>
+                            <FaRegComments style={{ marginTop: "-4px" }} />
+                            <div className="comment-content">
+                              {content.comment}
+                            </div>
                           </div>
                           <div className="view">
-                            <ImEye style={{ marginTop: "-4px" }} /><div className="view-content">{content.view}</div>
+                            <ImEye style={{ marginTop: "-4px" }} />
+                            <div className="view-content">{content.view}</div>
                           </div>
+                          {/* <div className="zoom">
+                            <AiOutlinePlayCircle />
+                          </div> */}
                         </div>
                       </div>
                       <div className="image-content pt-2 pb-3">

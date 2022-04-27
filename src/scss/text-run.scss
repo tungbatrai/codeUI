@@ -1,0 +1,66 @@
+@keyframes textrun {
+    0% {
+      left: -10vw;
+      opacity: 0;
+  
+    }
+    5% {
+      left: 10vw;
+      opacity:  1;
+    }
+    95% {
+      left : 90vw;
+      opacity:1;
+    }
+    100% {
+      left: 100vw;
+      opacity: 0;
+  
+    }
+  }
+  .text-run {
+    font-family: Oswald;
+    width: 300px;
+    top: 70px;
+    left: 0px;
+    position: absolute;
+    animation: textrun;
+    animation-duration: 10s;
+    animation-timing-function:linear;
+    animation-iteration-count: infinite;
+   // z-index: 2;
+  }
+  @keyframes textrun2 {
+    0% {
+      left: -10vw;
+      opacity: 0;
+  
+    }
+    5% {
+      left: 10vw;
+      opacity: 1;
+    }
+    95% {
+      left : 90vw;
+      opacity:1;
+    }
+    100% {
+      left: 100vw;
+      opacity: 0;
+  
+    }
+  }
+  .text-run-2 {
+    // color:blue;
+    font-family: Oswald;
+    width: 300px;
+    top: 70px;
+    left: 0px;
+    position: absolute;
+    animation: textrun2;
+    animation-duration: 10s;
+    animation-timing-function:linear;
+    animation-iteration-count: infinite;
+   // z-index: 3;
+  }
+  

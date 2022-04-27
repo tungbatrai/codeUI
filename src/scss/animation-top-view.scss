@@ -1,0 +1,29 @@
+
+  @keyframes topviewsimg {
+    from {
+      top: -50px;
+      opacity: 0;
+    }
+    to {
+      top: -0px;
+      opacity: 1;
+    }
+  }
+  @keyframes topviewsimg2 {
+    from {
+      top: -50px;
+      opacity: 0;
+    }
+    to {
+      top: -0px;
+      opacity: 1;
+    }
+  }
+  .animation-active {
+    animation: topviewsimg;
+    animation-duration: 1s;
+  }
+  .animation {
+    animation: topviewsimg2;
+    animation-duration: 1s;
+  }
