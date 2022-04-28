@@ -52,11 +52,9 @@ export default function ProductContent() {
                             <ImEye style={{ marginTop: "-4px" }} />
                             <div className="view-content">{content.view}</div>
                           </div>
-                          {/* <div className="zoom">
-                            <AiOutlinePlayCircle />
-                          </div> */}
                         </div>
                       </div>
+                      
                       <div className="image-content pt-2 pb-3">
                         <div className="image-type">
                           {content.type.map((type, id) => {
@@ -69,6 +67,7 @@ export default function ProductContent() {
                         </div>
                         <h5 className="m-width190p">{content.name}</h5>
                       </div>
+                      
                     </div>
                   );
                 })}

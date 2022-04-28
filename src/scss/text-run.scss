@@ -19,6 +19,7 @@
     }
   }
   .text-run {
+    user-select: none;
     font-family: Oswald;
     width: 300px;
     top: 70px;
@@ -51,7 +52,7 @@
     }
   }
   .text-run-2 {
-    // color:blue;
+    user-select: none;
     font-family: Oswald;
     width: 300px;
     top: 70px;

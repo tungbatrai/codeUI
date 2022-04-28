@@ -1,4 +1,16 @@
 /** @format */
+@keyframes slideType {
+  0% {
+    top: -350px;
+  }
+  75% {
+    top: -470px;
+    opacity: 0;
+  }
+  100% {
+    top: -350px;
+  }
+}
 @keyframes slideTitle {
   // from {
   //   top: -500px;
@@ -96,7 +108,7 @@
   left: -77px;
   position: absolute;
   background-color: #e53637;
-  padding: 14px 20px; 
+  padding: 14px 20px;
   bottom: 9px;
   border-radius: 4px 0px 0px 4px;
   font-weight: 700;
@@ -148,6 +160,8 @@
   opacity: 1;
   transition: all, 0.2s;
   left: -80px;
+  animation: slideType;
+  animation-duration: 1.5s;
 }
 .slide-content {
   left: -75px;
