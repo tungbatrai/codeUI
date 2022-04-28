@@ -6,12 +6,45 @@ import Home from "./components/Home";
 import "./custom.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import Header from "../src/common/Header";
+import PageNotFound from "../src/common/PageNotFound";
+import { render } from "react-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Body from "./components/Body";
+import Detail from "./components/Detail";
+import Particles from "./components/Particeles";
+
 const axios = require("axios");
 
 function App() {
+
   return (
     <div className="App">
-      <Home />
+      {/* <Home /> */}
+      {/* <Header /> */}
+      {/* <BrowserRouter>
+        <Routes>
+       
+          
+          <Route path="/home" element={<Home />}>
+               <Route index element={<Home />} />
+          </Route>
+           <Route path="*" element={<PageNotFound replace to="/404" />} /> 
+        </Routes>
+      </BrowserRouter> */}
+      
+
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />}>
+            <Route path="" element={<Body />} />
+            <Route path="detail/:id" element={<Detail />} />
+          </Route>
+          <Route path="particeles" element={<Particles />} />
+          <Route path="*" element={<PageNotFound replace to="/404" />} />
+        </Routes>
+      </BrowserRouter>
+      
     </div>
   );
 }

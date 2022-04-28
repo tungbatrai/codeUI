@@ -6,6 +6,7 @@ import { HiArrowRight } from "react-icons/hi";
 import { ImEye } from "react-icons/im";
 import { FaRegComments } from "react-icons/fa";
 import { AiOutlinePlayCircle } from "react-icons/ai";
+import { Link } from "react-router-dom";
 export default function ProductContent() {
   const [data, setData] = useState([]);
   useEffect(() => {
@@ -34,27 +35,29 @@ export default function ProductContent() {
                   return (
                     <div className="col-lg-4 col-md-6 col-sm-6" key={id}>
                       <div className="image">
-                        <div className="ep">
-                          <div className="h-100 pt-1p">
-                            {content.current_episodes}/ {content.episodes}
-                          </div>
-                        </div>
-                        <div className="image-custom">
-                          <img src={`${content.url}`} className="" />
-
-                          <div className="comment">
-                            <FaRegComments style={{ marginTop: "-4px" }} />
-                            <div className="comment-content">
-                              {content.comment}
+                        <Link to={`detail/1`}>
+                          <div className="ep">
+                            <div className="h-100 pt-1p">
+                              {content.current_episodes}/ {content.episodes}
                             </div>
                           </div>
-                          <div className="view">
-                            <ImEye style={{ marginTop: "-4px" }} />
-                            <div className="view-content">{content.view}</div>
+                          <div className="image-custom">
+                            <img src={`${content.url}`} className="" />
+
+                            <div className="comment">
+                              <FaRegComments style={{ marginTop: "-4px" }} />
+                              <div className="comment-content">
+                                {content.comment}
+                              </div>
+                            </div>
+                            <div className="view">
+                              <ImEye style={{ marginTop: "-4px" }} />
+                              <div className="view-content">{content.view}</div>
+                            </div>
                           </div>
-                        </div>
+                        </Link>
                       </div>
-                      
+
                       <div className="image-content pt-2 pb-3">
                         <div className="image-type">
                           {content.type.map((type, id) => {
@@ -67,7 +70,6 @@ export default function ProductContent() {
                         </div>
                         <h5 className="m-width190p">{content.name}</h5>
                       </div>
-                      
                     </div>
                   );
                 })}
