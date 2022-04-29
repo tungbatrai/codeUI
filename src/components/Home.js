@@ -12,6 +12,7 @@ import {
 } from "react-router-dom";
 import Body from "./Body";
 import Detail from "./Detail";
+import Footer from "../common/Footer";
 
 export default function Home() {
   return (
@@ -21,6 +22,8 @@ export default function Home() {
         <Route path="" element={<Body />} />
         <Route path="detail/:id" element={<Detail />} />
       </Routes>
+
+      <Footer />
     </>
   );
 }

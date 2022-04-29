@@ -2,34 +2,32 @@
 
 @import url("https://fonts.googleapis.com/css?family=Fredoka+One|Open+Sans");
 @import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Mulish&display=swap");
 @import "./scss/common.scss";
 @import "./scss/pageNotFound.scss";
 @import "./scss/slide.scss";
 @import "./scss/text-run.scss";
 @import "./scss/animation-top-view.scss";
-
 $SM: 576px;
 $MD: 768px;
 $LG: 992px;
 $XL: 1200px;
 $XXL: 1400px;
-
 @mixin Responsive($canvas) {
   @if $canvas == SM {
-    @media only screen and (min-width: $XS) {
+    @media only screen and (max-width: $SM) {
       @content;
     }
   } @else if $canvas == MD {
-    @media only screen and (min-width: $SM) {
+    @media only screen and (max-width: $MD) {
       @content;
     }
   } @else if $canvas == LG {
-    @media only screen and (min-width: $MD) {
+    @media only screen and (max-width: $LG) {
       @content;
     }
   } @else if $canvas == XL {
-    @media only screen and (min-width: $XL) {
+    @media only screen and (max-width: $XL) {
       @content;
     }
   }
@@ -47,7 +45,12 @@ a {
   color: #fff !important;
 }
 // header
+
 .header {
+  position: fixed;
+  z-index: 10;
+  top: 0px;
+  font-size: 15px;
   user-select: none;
   background-color: #070720;
   color: #b7b7b7;
@@ -56,20 +59,105 @@ a {
   width: 100%;
   font-family: "Mulish", sans-serif;
   font-weight: 700;
-  @include Responsive(MD) {
-    // display: none;
+  @include Responsive(LG) {
+    font-size: 0.8em;
   }
   .container {
     .menu {
       cursor: pointer;
+      @include Responsive(LG) {
+        display: none !important;
+      }
     }
     .active {
       background: #e53637;
       color: #ffffff;
       cursor: pointer;
+      @include Responsive(LG) {
+        display: none !important;
+      }
     }
     .header-icon {
       font-size: 25px;
+      @include Responsive(LG) {
+        font-size: 1.1rem;
+      }
+    }
+    .nav {
+      // background-color: rgb(214, 24, 24);
+      height: 100%;
+      width: 100%;
+      position: relative;
+      .line {
+        position: absolute;
+        top: 22px;
+        right: 0px;
+        width: 30px;
+        height: 2px;
+        border-radius: 1px;
+        background-color: #fff;
+        transition: all 0.25s;
+        &::after {
+          content: "";
+          position: absolute;
+          top: 8px;
+          right: 0px;
+          width: 30px;
+          height: 2px;
+          border-radius: 1px;
+          background-color: #fff;
+        }
+        &::before {
+          content: "";
+          position: absolute;
+          top: 16px;
+          right: 0px;
+          width: 30px;
+          height: 2px;
+          border-radius: 1px;
+          background-color: #fff;
+        }
+      }
+      .line-x {
+        background-color: #fff;
+        position: absolute;
+        width: 30px;
+        height: 2px;
+        border-radius: 1px;
+        top: 29px;
+        right: 0px;
+        transform: rotate(225deg);
+        transition: all 0.25s;
+        &::after {
+          content: "";
+          background-color: #fff;
+          position: absolute;
+          width: 30px;
+          height: 2px;
+          border-radius: 1px;
+          top: 0px;
+          transform: rotate(265deg);
+        }
+      }
+      .nav-text {
+        padding-left: 10px;
+        margin-top: 15px;
+        font-size: 20px;
+      }
+    }
+    .nav-menu {
+      background-color: #fff;
+      text-align: center;
+      align-items: center;
+      border-radius: 2px;
+      
+      .nav-menu-item {
+        &:hover {
+          background-color: #aaaaaa;
+          color : #000;
+          
+        } 
+      }
     }
   }
 }

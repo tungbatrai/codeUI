@@ -14,7 +14,7 @@ export default function Body() {
     }, 5000);
   })
   return (
-    <div className="container ">
+    <div className="container  mt-108p ">
       <div className={`${textRun ? 'text-run-2' : 'displaynone'}`}>Welcome to summoner's rift </div>
       <div className="text-run mb-5">Welcome to Web Anime</div>
 
