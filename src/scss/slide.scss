@@ -65,8 +65,33 @@
     bottom: 9px;
   }
 }
+$SSM: 375px;
+$SM: 576px;
+$MD: 768px;
+$LG: 992px;
+$XL: 1200px;
+$XXL: 1400px;
+@mixin Responsive($canvas) {
+  @if $canvas == SM {
+    @media only screen and (max-width: $SM) {
+      @content;
+    }
+  } @else if $canvas == MD {
+    @media only screen and (max-width: $MD) {
+      @content;
+    }
+  } @else if $canvas == LG {
+    @media only screen and (max-width: $LG) {
+      @content;
+    }
+  } @else if $canvas == XL {
+    @media only screen and (max-width: $XL) {
+      @content;
+    }
+  }
+}
 .slide {
-  cursor: pointer;
+  // cursor: pointer;
   user-select: none;
 }
 .ct-button {
@@ -96,13 +121,15 @@
   font-family: "Oswald", sans-serif;
   font-weight: 700;
   line-height: 52px;
-  //   margin-top: 35px;
   left: -80px;
-  //   margin-bottom: 8px;
   position: absolute;
-  top: -180px;
+  top: -300px;
   animation: slideTitle;
   animation-duration: 1.5s;
+  @include Responsive(MD) {
+    left: 0px;
+    font-size: 30px;
+  }
 }
 .slide-button {
   left: -77px;
@@ -117,6 +144,11 @@
   height: 50px;
   animation: slideButton;
   animation-duration: 1.5s;
+  @include Responsive(MD) {
+    left: 0px;
+    bottom: 31px;
+    font-size: 0.8em;
+  }
 }
 .slide-icon-button {
   background-color: #e53637;
@@ -128,6 +160,10 @@
   border-radius: 0px 4px 4px 0px;
   animation: slideButton;
   animation-duration: 1.5s;
+  @include Responsive(MD) {
+    left: 145px;
+    bottom: 31px;
+  }
 }
 .button-next {
   @extend .ct-button;
@@ -162,6 +198,9 @@
   left: -80px;
   animation: slideType;
   animation-duration: 1.5s;
+  @include Responsive(MD) {
+    left: 0px;
+  }
 }
 .slide-content {
   left: -75px;
@@ -169,6 +208,10 @@
   top: -70px;
   animation: slideContent;
   animation-duration: 1.5s;
+  @include Responsive(MD) {
+    left: 0px;
+    top: -120px;
+  }
 }
 .dot-page {
   height: 8px !important;
@@ -176,4 +219,10 @@
   background: #b7b7b7;
   border-radius: 50%;
   margin-right: 10px;
+}
+.screen-img {
+  width: 100%;
+  height: 579px;
+  position: absolute;
+  top: 0px;
 }

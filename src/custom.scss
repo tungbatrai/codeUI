@@ -8,6 +8,7 @@
 @import "./scss/slide.scss";
 @import "./scss/text-run.scss";
 @import "./scss/animation-top-view.scss";
+$SSM: 375px;
 $SM: 576px;
 $MD: 768px;
 $LG: 992px;
@@ -31,6 +32,23 @@ $XXL: 1400px;
       @content;
     }
   }
+}
+@keyframes buttonshow {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+img{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.buttonshow {
+  animation: buttonshow;
+  animation-duration: 1s;
 }
 html {
   height: 100%;
@@ -62,10 +80,16 @@ a {
   @include Responsive(LG) {
     font-size: 0.8em;
   }
-  .container {
+  .container-header {
+    // padding-right: var(--bs-gutter-x,.75rem);
+    // padding-left: var(--bs-gutter-x,.75rem);
+    // margin-right: auto;
+    // margin-left: auto;
+    width: 100%;
+    height: 100%;
     .menu {
       cursor: pointer;
-      @include Responsive(LG) {
+      @include Responsive(MD) {
         display: none !important;
       }
     }
@@ -73,7 +97,7 @@ a {
       background: #e53637;
       color: #ffffff;
       cursor: pointer;
-      @include Responsive(LG) {
+      @include Responsive(MD) {
         display: none !important;
       }
     }
@@ -150,13 +174,12 @@ a {
       text-align: center;
       align-items: center;
       border-radius: 2px;
-      
+
       .nav-menu-item {
         &:hover {
           background-color: #aaaaaa;
-          color : #000;
-          
-        } 
+          color: #000;
+        }
       }
     }
   }
@@ -196,13 +219,22 @@ a {
       }
       &:hover {
         font-size: 15px;
+        transition: all 0.5s;
+        
       }
     }
 
     .row {
       .image {
         width: 190px;
-        cursor: pointer;
+        // cursor: pointer;
+        @include Responsive(SM) {
+          width: 100%;
+          padding-left: 10%;
+          padding-right: 10%;
+          // display: none !important;
+        }
+
         .ep {
           width: 66px;
           height: 24px;
@@ -284,23 +316,31 @@ a {
               padding-left: 2px;
             }
           }
-          // .zoom {
-
-          //   position: absolute;
-          //   font-size: 10px;
-          //   top: 100px;
-          //   left: 70px;
-          //   z-index: 1;
-          //   &:hover {
-          //     display: inline-block;
-          //     font-size: 50px;
-          //   }
-          // }
         }
       }
       .image-content {
         user-select: none;
+        width: 100%;
+        .ct-name {
+          // display: none;
+          @include Responsive(SM) {
+            margin-left: 10%;
+            margin-right: 10%;
+            text-align: start;
+            max-width: 100% !important;
+            // width: 100%;
+            word-wrap: break-word;
+          }
+        }
         .image-type {
+          @include Responsive(SM) {
+            margin-left: 10%;
+            margin-right: 10%;
+            text-align: start;
+            max-width: 100% !important;
+            // width: 100%;
+            word-wrap: break-word;
+          }
           .image-type-content {
             cursor: pointer;
             background: #ffffff33;
@@ -310,6 +350,7 @@ a {
             margin: 2px;
             border-radius: 50px;
             padding: 1px 10px;
+
           }
         }
       }

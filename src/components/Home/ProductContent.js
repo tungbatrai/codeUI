@@ -19,13 +19,13 @@ export default function ProductContent() {
           <div key={index}>
             <div className="product-content">
               <div className="row">
-                <div className="col-md-8">
+                <div className="col-8">
                   <div className="product-content-title ">
                     <span className="ct-box-title"></span>
                     {item.name}
                   </div>
                 </div>
-                <div className="col-md-4 text-end view-all">
+                <div className="col-4 text-end view-all">
                   <span className="view-all-content">VIEW ALL</span>{" "}
                   <HiArrowRight className="icon-view-all mt-e5p" />
                 </div>
@@ -33,7 +33,7 @@ export default function ProductContent() {
               <div className="row pt-4">
                 {item?.data.map((content, id) => {
                   return (
-                    <div className="col-lg-4 col-md-6 col-sm-6" key={id}>
+                    <div className="col-lg-4 col-md-4 col-sm-6 col-12" key={id}>
                       <div className="image">
                         <Link to={`detail/1`}>
                           <div className="ep">
@@ -68,7 +68,7 @@ export default function ProductContent() {
                             );
                           })}
                         </div>
-                        <h5 className="m-width190p">{content.name}</h5>
+                        <h5 className="m-width190p ct-name">{content.name}</h5>
                       </div>
                     </div>
                   );

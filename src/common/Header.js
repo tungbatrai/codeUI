@@ -5,12 +5,19 @@ import { VscSearch } from "react-icons/vsc";
 import { FaUserAlt } from "react-icons/fa";
 export default function Header() {
   const [menuActive, setMenuActive] = useState(0);
-  const [navActive, setNavActive] = useState(false);
+  const [navActive, setNavActive] = useState(true);
+  const [mobie, setMobie] = useState(false);
+  useEffect(() => {
+    var width = window.innerWidth;
+    if (width >= 768) {
+      setMobie(true);
+    }
+  }, []);
   return (
     <div className="header">
-      <div className="container h-100">
+      <div className={`container-header ${mobie ? "container h-100" : ""}`}>
         <div className="row h-100">
-          <div className="col-3 h-100">
+          <div className="col-sm-3 col-4 h-100">
             <div className="d-flex justify-content-center align-items-center h-100">
               <Link to="/">
                 <img
@@ -20,7 +27,7 @@ export default function Header() {
               </Link>
             </div>
           </div>
-          <div className="col-md-6 col-3">
+          <div className="col-md-6 col-sm-3 col-1">
             <div className="d-flex p-0 m-0 h-100">
               <div
                 className={`d-flex align-items-center w-118p  justify-content-center ${
@@ -56,9 +63,9 @@ export default function Header() {
               </div>
             </div>
           </div>
-          <div className="col-md-3 col-1">
+          <div className="col-md-3 col-sm-3 col-3">
             <div className="d-flex align-items-center h-100 justify-content-end header-icon">
-              <div className="d-flex align-items-center justify-content-center  me-5">
+              <div className="d-flex align-items-center justify-content-center  me-4">
                 <VscSearch />
               </div>
               <div className="d-flex align-items-center  justify-content-center me-2">
@@ -66,26 +73,28 @@ export default function Header() {
               </div>
             </div>
           </div>
-          <div className="col-3   ">
-            <div className="nav" onClick={() => setNavActive(!navActive)}>
+          <div
+            className={`col-sm-3 col-4 min-width120p ps-0 pe-4 ${mobie ? "displaynone" : ""}`}
+          >
+            <div className="nav " onClick={() => setNavActive(!navActive)}>
               <div className="nav-text">Menu</div>{" "}
               <div className={navActive ? "line" : "line-x"}></div>
             </div>
           </div>
-          <div className={navActive ? "displaynone" : "col-12"}>
-            <div className="nav-menu container w-75">
-            <div className="row d-flex align-items-center justify-content-center nav-menu-item">
+          <div className={navActive ? "displaynone" : "p-0 col-12 buttonshow"}>
+            <div className="nav-menu container px-0  w-100">
+              <div className="row d-flex align-items-center justify-content-center nav-menu-item">
                 Home
-            </div>
-            <div className="row d-flex align-items-center justify-content-center nav-menu-item">
+              </div>
+              <div className="row d-flex align-items-center justify-content-center nav-menu-item">
                 Categorys
-            </div>
-            <div className="row d-flex align-items-center justify-content-center nav-menu-item">
+              </div>
+              <div className="row d-flex align-items-center justify-content-center nav-menu-item">
                 Our Blog
-            </div>
-            <div className="row d-flex align-items-center justify-content-center nav-menu-item">
+              </div>
+              <div className="row d-flex align-items-center justify-content-center nav-menu-item">
                 Contacts
-            </div>
+              </div>
             </div>
           </div>
         </div>
