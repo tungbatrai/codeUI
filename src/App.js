@@ -13,11 +13,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Body from "./components/Body";
 import Detail from "./components/Detail";
 import Particles from "./components/Particeles";
+import Category from "./components/Category/Category";
 
 const axios = require("axios");
 
 function App() {
-
   return (
     <div className="App">
       {/* <Home /> */}
@@ -32,19 +32,18 @@ function App() {
            <Route path="*" element={<PageNotFound replace to="/404" />} /> 
         </Routes>
       </BrowserRouter> */}
-      
 
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />}>
             <Route path="" element={<Body />} />
             <Route path="detail/:id" element={<Detail />} />
+            <Route path="category/:name" element={<Category />} />
           </Route>
           <Route path="particeles" element={<Particles />} />
           <Route path="*" element={<PageNotFound replace to="/404" />} />
         </Routes>
       </BrowserRouter>
-      
     </div>
   );
 }

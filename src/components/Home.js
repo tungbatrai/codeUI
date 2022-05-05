@@ -13,6 +13,7 @@ import {
 import Body from "./Body";
 import Detail from "./Detail";
 import Footer from "../common/Footer";
+import Category from "./Category/Category";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <Routes>
         <Route path="" element={<Body />} />
         <Route path="detail/:id" element={<Detail />} />
+        <Route path="category/:name" element={<Category />} />
       </Routes>
 
       <Footer />

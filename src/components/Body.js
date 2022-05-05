@@ -24,15 +24,13 @@ export default function Body() {
     <div className="container  mt-108p ">
       <div className={`${hiddenTextRunt ? "displaynone" : ""} `}>
         <div className={`${textRun ? "text-run-2" : "displaynone"}`}>
-          Welcome to summoner's rift{" "}
+          Welcome to summoner's rift
         </div>
         <div className="text-run mb-5">Welcome to Web Anime</div>
       </div>
 
       <div className="mb-5"><Slide /></div>
-      
-
-      <div className="product ">
+      <div className="product pb-250p ">
         <div className="row">
           <div className="col-lg-8">
             <ProductContent />
