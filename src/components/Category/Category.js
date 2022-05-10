@@ -1,15 +1,31 @@
 /** @format */
 
+import ProductContent from "../Home/ProductContent";
+import TopViews from "../Home/TopViews";
+import { Routes, Route, useParams } from "react-router-dom";
+import React ,{useState,useEffect} from "react";
 export default function Category() {
+  const [status,setStatus] = useState(false)
+  let params = useParams()
+  useEffect(()=> {
+        // console.log(params.name)
+        setStatus(true)
+        
+  },[])
   return (
     <div className="mt-108p">
-      Cateogry
-      <video
-        class="k4urcfbm datstx6m a8c37x1j"
-        playsinline=""
-        src="blob:https://www.facebook.com/a7c973c1-e283-40ea-a9b2-b439bcc2fa1e"
-        style="display: block;"
-      ></video>
+      <div className="container">
+        <div className="product pb-250p ">
+          <div className="row">
+            <div className="col-lg-8">
+              <ProductContent status={true} />
+            </div>
+            <div className="col-lg-4">
+              <TopViews />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

@@ -1,9 +1,10 @@
 /** @format */
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { VscSearch } from "react-icons/vsc";
 import { FaUserAlt } from "react-icons/fa";
 export default function Header() {
+  let navigate = useNavigate();
   const [menuActive, setMenuActive] = useState(0);
   const [navActive, setNavActive] = useState(true);
   const [mobie, setMobie] = useState(false);
@@ -13,6 +14,25 @@ export default function Header() {
       setMobie(true);
     }
   }, []);
+  function handleGoCategory(e) {
+    setMenuActive(e);
+    switch (e) {
+      case 0:
+        navigate("/");
+        break;
+      case 1:
+        navigate("/category/name");
+        break;
+      case 2:
+        break;
+      case 3:
+        navigate("/contact");
+        break;
+      // 2
+      default:
+        break;
+    }
+  }
   return (
     <div className="header">
       <div className={`container-header ${mobie ? "container h-100" : ""}`}>
@@ -33,7 +53,7 @@ export default function Header() {
                 className={`d-flex align-items-center w-118p  justify-content-center ${
                   menuActive === 0 ? "active" : "menu"
                 }`}
-                onClick={() => setMenuActive(0)}
+                onClick={() => handleGoCategory(0)}
               >
                 HomePage
               </div>
@@ -41,7 +61,7 @@ export default function Header() {
                 className={`d-flex align-items-center w-138p  justify-content-center ${
                   menuActive === 1 ? "active" : "menu"
                 }`}
-                onClick={() => setMenuActive(1)}
+                onClick={() => handleGoCategory(1)}
               >
                 Categorys
               </div>
@@ -49,7 +69,7 @@ export default function Header() {
                 className={`d-flex align-items-center w-138p  justify-content-center ${
                   menuActive === 2 ? "active" : "menu"
                 }`}
-                onClick={() => setMenuActive(2)}
+                onClick={() => handleGoCategory(2)}
               >
                 Our Blog
               </div>
@@ -57,7 +77,7 @@ export default function Header() {
                 className={`d-flex align-items-center w-138p  justify-content-center ${
                   menuActive === 3 ? "active" : "menu"
                 }`}
-                onClick={() => setMenuActive(3)}
+                onClick={() => handleGoCategory(3)}
               >
                 Contacts
               </div>
@@ -74,7 +94,9 @@ export default function Header() {
             </div>
           </div>
           <div
-            className={`col-sm-3 col-4 min-width120p ps-0 pe-4 ${mobie ? "displaynone" : ""}`}
+            className={`col-sm-3 col-4 min-width120p ps-0 pe-4 ${
+              mobie ? "displaynone" : ""
+            }`}
           >
             <div className="nav " onClick={() => setNavActive(!navActive)}>
               <div className="nav-text">Menu</div>{" "}

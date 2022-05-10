@@ -10,6 +10,7 @@ export default function Body() {
   const [textRun, setTextRun] = useState(false);
   const [hiddenTextRunt, setHiddenTextRunt] = useState(false);
   useEffect(() => {
+   
     setTimeout(() => {
       setTextRun(true);
     }, 5000);
@@ -20,6 +21,10 @@ export default function Body() {
       setHiddenTextRunt(true);
     }
   }, [window.innerWidth]);
+  useEffect(()=> {
+    var height = window.scrollY
+    console.log(height)
+  },[window.scrollY])
   return (
     <div className="container  mt-108p ">
       <div className={`${hiddenTextRunt ? "displaynone" : ""} `}>

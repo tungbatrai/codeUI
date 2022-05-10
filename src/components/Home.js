@@ -14,6 +14,7 @@ import Body from "./Body";
 import Detail from "./Detail";
 import Footer from "../common/Footer";
 import Category from "./Category/Category";
+import Contact from "./contacts/Contact";
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
         <Route path="" element={<Body />} />
         <Route path="detail/:id" element={<Detail />} />
         <Route path="category/:name" element={<Category />} />
+        <Route path="contact" element={<Contact />} />
       </Routes>
 
       <Footer />

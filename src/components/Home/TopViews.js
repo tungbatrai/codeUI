@@ -7,7 +7,7 @@ export default function TopViews() {
   const [data, setData] = useState([]);
   const [show,setShow] = useState(false)
   useEffect(() => {
-    console.log(DataTopView.sort(compareValues("views_day")));
+    // console.log(DataTopView.sort(compareValues("views_day")));
     setData(DataTopView.sort(compareValues("views_day")));
   }, []);
   function compareValues(key, order = "asc") {

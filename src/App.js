@@ -14,6 +14,7 @@ import Body from "./components/Body";
 import Detail from "./components/Detail";
 import Particles from "./components/Particeles";
 import Category from "./components/Category/Category";
+import Contact from "./components/contacts/Contact";
 
 const axios = require("axios");
 
@@ -39,6 +40,7 @@ function App() {
             <Route path="" element={<Body />} />
             <Route path="detail/:id" element={<Detail />} />
             <Route path="category/:name" element={<Category />} />
+            <Route path="contact" element={<Contact />} />
           </Route>
           <Route path="particeles" element={<Particles />} />
           <Route path="*" element={<PageNotFound replace to="/404" />} />
