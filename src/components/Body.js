@@ -21,10 +21,10 @@ export default function Body() {
       setHiddenTextRunt(true);
     }
   }, [window.innerWidth]);
-  useEffect(()=> {
-    var height = window.scrollY
-    console.log(height)
-  },[window.scrollY])
+  // useEffect(()=> {
+  //   var height = window.scrollY
+  //   console.log(height)
+  // },[window.scrollY])
   return (
     <div className="container  mt-108p ">
       <div className={`${hiddenTextRunt ? "displaynone" : ""} `}>
